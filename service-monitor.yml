@@ -1,0 +1,21 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: provider-demo
+  # Change this to the namespace the Prometheus instance is running in
+  namespace: system
+  labels:
+    release: ungaged-lion
+    app: prometheus-operator
+spec:
+  selector:
+    matchLabels:
+      # your target service
+      app: provider-demo
+  namespaceSelector:
+    any: true
+  endpoints:
+    - targetPort: 9876
+      interval: 5s
+      path: /actuator/prometheus

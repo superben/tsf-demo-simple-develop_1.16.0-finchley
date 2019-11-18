@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: provider-demo
+  cloud:
+    consul:
+      discovery:
+        tags: foo=world, hello
+      config:
+        enabled: true
+        format: YAML
+        prefix: configuration
+        defaultContext: apps
+        profileSeparator: '::'

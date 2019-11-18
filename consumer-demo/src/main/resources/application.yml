@@ -1,0 +1,16 @@
+logging:
+  file: /var/log/tsf/${spring.application.name}/root.log
+  level: 
+    root: INFO
+
+server:
+  port: 18083
+
+management:
+  security:
+    enabled: false
+
+#开启Hystrix时启用
+#feign:
+#  hystrix:
+#    enabled: true

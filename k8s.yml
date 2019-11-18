@@ -1,0 +1,116 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consul
+  labels:
+    app: consul
+  namespace: default
+  annotations:
+    monitoring: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consul
+  template:
+    metadata:
+      labels:
+        app: consul
+    spec:
+      containers:
+        - image: consul:1.6
+          name: consul
+          ports:
+            - containerPort: 8500
+              protocol: TCP
+            - containerPort: 8600
+              protocol: TCP
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: consul
+  name: consul
+  namespace: default
+spec:
+  ports:
+    - name: web
+      port: 8500
+      protocol: TCP
+      targetPort: 8500
+    - name: admin
+      port: 8600
+      protocol: TCP
+      targetPort: 8600
+  selector:
+    app: consul
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: provider-demo
+  labels:
+    app: provider-demo
+  namespace: default
+  annotations:
+    monitoring: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: provider-demo
+  template:
+    metadata:
+      labels:
+        app: provider-demo
+    spec:
+      containers:
+        - image: 10.200.10.1:5000/superben/demo-provider:v1.1
+          name: provider-demo
+          ports:
+            - containerPort: 18081
+            - containerPort: 9876
+              name: http-demo
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+            requests:
+              memory: "384Mi"
+              cpu: "200m"
+          env:
+            - name: tsf_consul_ip
+              value: "consul"
+            - name: tsf_consul_port
+              value: "8500"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: provider-demo
+  name: provider-demo
+  namespace: default
+spec:
+  ports:
+    - name: http
+      port: 18081
+      protocol: TCP
+      targetPort: 18081
+    - name: admin
+      port: 9876
+      protocol: TCP
+      targetPort: 9876
+  selector:
+    app: provider-demo
+  type: ClusterIP

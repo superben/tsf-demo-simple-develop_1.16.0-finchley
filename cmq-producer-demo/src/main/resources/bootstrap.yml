@@ -1,0 +1,17 @@
+server:
+  port: 18084
+spring:
+  application:
+    name: cmq-producer-demo
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test-topic
+        output:
+          destination: test-topic
+      cmq:
+        binder:
+          secretId: AKIDibSE0B7FyRddYl4rfDwP3UqvvukPsEVo
+          secretKey: 0oxqwvoQVN7wc7ML0P4ammWzD8oIfljS
+          endpoint: https://cmq-topic-gz.api.qcloud.com

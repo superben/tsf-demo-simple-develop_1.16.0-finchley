@@ -1,0 +1,162 @@
+{
+  "traces": [
+    {
+      "timestamp": "2019-11-07T08:29:49.476Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:18081/actuator/httptrace",
+        "headers": {
+          "sec-fetch-mode": [
+            "navigate"
+          ],
+          "sec-fetch-site": [
+            "none"
+          ],
+          "cookie": [
+            "TESTLINK_USER_AUTH_COOKIE=4660218270fc7d4deb455913f621e1046a4dc9133d5f3b6d9fff778aff361961; TESTLINK197TL_user1_proj2_testPlanId=3; JSESSIONID.cbeff84d=1u6jt345vrcdv1wcz50zdh559w; screenResolution=1680x1050; JSESSIONID.156438d7=node015uor5gu0evm5141bt3k5h89ly4.node0; jenkins-timestamper-offset=-28800000; JSESSIONID.486a2f11=node0ivxricgszyu1ghivl7644siq0.node0; JSESSIONID.6d9d4131=node0eoxx1cvfyc4y1jzyh8vtnwwnw0.node0; JSESSIONID.23b841f3=node01r6xats5ymfyg1wjos9o1eda491.node0; JSESSIONID.8cbe093c=node019phhtp8x78mdc447o3cawshi2.node0; JSESSIONID.3be215d2=node01eq96qfv35af7tr1uj1d8vqma1.node0; JSESSIONID.9b881f6f=node0727pqh4xvwq3uhabotv9m46k0.node0; JSESSIONID.450dc8be=node0eymawla5ilwsjywyqjx0uddq0.node0; JSESSIONID.aaee8e37=node0166493uqcwvsc1u2oyc628kbbt1.node0; JSESSIONID.3850850b=node0wyzjtgic9apzjx7hxbzzv4z31.node0; JSESSIONID.959ae2ee=node01twgo8q8qhheh1nhmt1lfcuvnt1.node0; JSESSIONID.da623a37=node0yg375injn77z4lkzvcyl9lu61.node0; JSESSIONID.1bde639e=node01f8cnonw9hfp01tduyk0e0l3bu1.node0"
+          ],
+          "accept-language": [
+            "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7"
+          ],
+          "upgrade-insecure-requests": [
+            "1"
+          ],
+          "host": [
+            "localhost:18081"
+          ],
+          "connection": [
+            "keep-alive"
+          ],
+          "sec-fetch-user": [
+            "?1"
+          ],
+          "accept-encoding": [
+            "gzip, deflate, br"
+          ],
+          "accept": [
+            "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3"
+          ],
+          "user-agent": [
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+          ]
+        },
+        "remoteAddress": null
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "timeTaken": 18
+    },
+    {
+      "timestamp": "2019-11-07T08:29:10.271Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:18081/echo/asd",
+        "headers": {
+          "host": [
+            "localhost:18081"
+          ],
+          "accept": [
+            "*/*"
+          ],
+          "user-agent": [
+            "curl/7.54.0"
+          ]
+        },
+        "remoteAddress": null
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Length": [
+            "60"
+          ],
+          "Date": [
+            "Thu, 07 Nov 2019 08:29:10 GMT"
+          ],
+          "Content-Type": [
+            "text/plain;charset=UTF-8"
+          ]
+        }
+      },
+      "timeTaken": 3
+    },
+    {
+      "timestamp": "2019-11-07T08:29:09.235Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:18081/echo/asd",
+        "headers": {
+          "host": [
+            "localhost:18081"
+          ],
+          "accept": [
+            "*/*"
+          ],
+          "user-agent": [
+            "curl/7.54.0"
+          ]
+        },
+        "remoteAddress": null
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Length": [
+            "60"
+          ],
+          "Date": [
+            "Thu, 07 Nov 2019 08:29:09 GMT"
+          ],
+          "Content-Type": [
+            "text/plain;charset=UTF-8"
+          ]
+        }
+      },
+      "timeTaken": 17
+    },
+    {
+      "timestamp": "2019-11-07T08:09:00.392Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:18081/echo/asd",
+        "headers": {
+          "host": [
+            "localhost:18081"
+          ],
+          "accept": [
+            "*/*"
+          ],
+          "user-agent": [
+            "curl/7.54.0"
+          ]
+        },
+        "remoteAddress": null
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Length": [
+            "60"
+          ],
+          "Date": [
+            "Thu, 07 Nov 2019 08:09:00 GMT"
+          ],
+          "Content-Type": [
+            "text/plain;charset=UTF-8"
+          ]
+        }
+      },
+      "timeTaken": 63
+    }
+  ]
+}

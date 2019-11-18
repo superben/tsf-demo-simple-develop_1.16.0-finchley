@@ -1,0 +1,27 @@
+version: '2.1'
+services:
+  consul:
+    image: consul:1.6
+    ports:
+      - 8500:8500
+      - 8600:8600
+
+  provider-demo:
+    build: provider-demo
+#    image: 10.7.116.236:31104/tsf_100000013/demo-provider:v1.0
+    image: 10.200.10.1:5000/superben/demo-provider:v1.0
+    ports:
+      - 18081:18081
+    environment:
+      - tsf_consul_ip=consul
+      - tsf_consul_port=8500
+
+  consumer-demo:
+    build: consumer-demo
+#    image: 10.7.116.236:31104/tsf_100000013/demo-consumer:v1.0
+    image: 10.200.10.1:5000/superben/demo-consumer:v1.0
+    ports:
+      - 18083:18083
+    environment:
+      - tsf_consul_ip=consul
+      - tsf_consul_port=8500
